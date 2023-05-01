@@ -16,11 +16,12 @@ export class ColorsService {
    loadColors(color: string): Observable<String[]>{
     const httpOptions = {
       headers: new HttpHeaders({ 
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin':'*',
+
       })
     };
 
-   return this.http.get<any>(`https://palett.es/API/v1/palette/from/${color}`,httpOptions );
+   return this.http.get<any>(`https://palett.es/API/v1/palette/from/000000`,httpOptions );
   } 
 
   
