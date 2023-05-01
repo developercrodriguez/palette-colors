@@ -73,8 +73,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-course:build:production",
-              "proxyConfig": "./proxy.conf.json"
+              "browserTarget": "angular-course:build:production"
             }
           }
         },
