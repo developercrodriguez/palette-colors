@@ -12,10 +12,8 @@ export class ColorsService {
   }
 
    loadColors(color: string): Observable<String[]>{
-    const params = new HttpParams()
-      .set("model", "default");
 
-   return this.http.post<any>('http://colormind.io/api/', {params});
+   return this.http.get<any>(`https://palett.es/API/v1/palette/from/${color}` );
   } 
 
   
