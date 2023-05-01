@@ -2,7 +2,12 @@
 
 <div class="color-code">
 
-    Edit Color: <input #colorCode [value]='[[44,43,44],[90,83,82],"N","N","N"]'>
+    Edit Color: <input #colorCode [value]="color" (change)="onModify(colorCode.value)">
+    <div class="box" [ngStyle]="{'background-color': colorCode.value}">
+    </div>
+    <p>
+        {{colorCode.value}}
+    </p>
 
     <button (click)="onSaveClicked(colorCode.value)">Save Color</button>
 
