@@ -17,7 +17,7 @@ export class ColorsService {
     const httpOptions = {
       headers: new HttpHeaders({ 
         'Access-Control-Allow-Origin':'*',
-
+        
       })
     };
 
