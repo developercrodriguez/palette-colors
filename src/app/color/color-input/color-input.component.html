@@ -1,14 +1,12 @@
 <h2>Color for search:</h2>
 
-<div class="color-code">
+<div class="bg-blend-lighten hover:bg-blend-darken">
 
-    Edit Color: <input #colorCode [value]="color" (change)="onModify(colorCode.value)">
-    <div class="box" [ngStyle]="{'background-color': colorCode.value}">
-    </div>
+    Edit Color: <input #colorCode [value]="color" type='color' (mouseleave)="onModify(colorCode.value)">
     <p>
         {{colorCode.value}}
     </p>
 
-    <button (click)="onSaveClicked(colorCode.value)">Save Color</button>
+    <button class="bg-sky-500 hover:bg-sky-700" (click)="onSaveClicked(colorCode.value)">Save Color</button>
 
 </div>

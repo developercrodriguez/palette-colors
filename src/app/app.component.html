@@ -1,19 +1,16 @@
-<div class="top-menu">
-
-</div>
-
 <div class="header">
    
-<h1>Color selection app</h1>
+<h1 class="text-3xl font-bold underline">Color selection app</h1>
 </div>
-
-<div>
-    <color-input (colorChanged)="save($event)"></color-input>
-</div>
-<div class="colors">
-    <color-capsule [colorText]="color"></color-capsule>
-
-
+<div class="grid grid-cols-2 gap-4 place-self-auto place-content-stretch place-items-center h-48">
+    <div  class="w-full">
+        <color-input (colorChanged)="save($event)"></color-input>
+    </div>
+    <div class="w-full">
+        <div *ngFor="let color of colors$; index as i;">
+            <color-capsule [colorText]="color['hex'].value" [colorImage]="color['image'].bare"></color-capsule>
+        </div>
+    </div>
 </div>
 
 

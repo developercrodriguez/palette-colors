@@ -9,4 +9,8 @@ import { colorCode } from 'src/app/model/color';
 export class ColorCapsuleComponent {
   @Input()
   colorText: colorCode;
+
+  @Input()
+  colorImage: string;
+
 }

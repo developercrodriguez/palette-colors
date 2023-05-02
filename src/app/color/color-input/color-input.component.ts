@@ -8,13 +8,15 @@ import { colorCode } from 'src/app/model/color';
 })
 export class ColorInputComponent implements OnInit{
   color: string;
+  colorToUse: string;
 
 
   constructor() {
-    this.color = "#000000";
+    this.color = "ff0000";
   }
   ngOnInit(): void {
-    this.color = "#000000";
+    this.color = "ff0000";
+    this.colorToUse = '#'+this.color;
   }
 
 
@@ -28,5 +30,6 @@ export class ColorInputComponent implements OnInit{
   coloChange = new EventEmitter<String>();
   onModify(colorCode:string) {
     this.color = colorCode;
+    this.colorToUse = '#'+this.color;
   }
 }

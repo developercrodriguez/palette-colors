@@ -11,26 +11,25 @@ import { ColorsService } from './services/colors.service';
 export class AppComponent implements OnInit {
 
   colors$ : Observable<String[]>;
-  color: String;
+  color: string;
 
   constructor(private colorsService: ColorsService) {
-
   }
 
   ngOnInit() {
-    //this.colors$ = this.colors$.loadColors();
-    this.color= '1234';
-    this.colorsService.loadColors('')
+    this.colorsService.loadColors(this.color)
       .subscribe(response => {
-        console.log(response);
+        this.colors$= response['colors'];
       })
   }
 
-  save(color:string){
-   this.color = color;
-   console.log(color);
-   this.colors$ = this.colorsService.loadColors('');
-    console.log(this.colors$);
+  save(color2:string){
+   this.color = color2.replace('#', '');;
+   this.colorsService.loadColors(this.color)
+   .subscribe(response => {
+     this.colors$= response['colors'];
+   })
+    
   }
 
 }
